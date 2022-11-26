@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:elevation="2dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_marginLeft="16dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/milk1rem"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_margin="16dp"
+            android:id="@+id/two"
+            android:orientation="vertical"
+
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameid"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+
+
+                android:text="productName"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tvfirstName"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+
+                android:text="Quantity"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tvage"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+
+                android:text="Price"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:id="@+id/namex"-->
+<!--        android:fontFamily="@font/roboto"-->
+<!--        android:textColor="@color/black"-->
+
+<!--        android:textSize="16dp"-->
+
+<!--        android:text="test"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:id="@+id/phonex"-->
+<!--        android:visibility="gone"-->
+<!--        android:fontFamily="@font/roboto"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="16dp"-->
+
+<!--        android:text=""-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+
+<!--        android:id="@+id/addressx"-->
+<!--        android:fontFamily="@font/roboto"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="16dp"-->
+
+<!--        android:text="test"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+    <ImageView
+        android:id="@+id/slide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/next"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

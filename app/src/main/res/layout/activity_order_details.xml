@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:background="#F3F8F3"
+    android:layout_height="match_parent"
+    tools:context=".orderDetails">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/white"
+                android:elevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/selectiontop"
+                >
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_margin="16dp"
+
+                    android:id="@+id/backm"
+
+
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+
+                    android:text="Order Details"
+
+                    android:textColor="@color/green"
+                    android:textSize="20dp"
+
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintStart_toEndOf="@+id/backm"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/call"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="1dp"
+                android:text="Help"
+                android:textStyle="bold"
+
+                android:textSize="16dp"
+                android:id="@+id/call"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toBottomOf="@+id/selectiontop"
+                app:layout_constraintEnd_toStartOf="@id/help"
+
+                app:tint="@color/black" />
+
+
+
+            <ImageView
+                android:id="@+id/help"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="16dp"
+
+                android:src="@drawable/support"
+
+                app:layout_constraintTop_toBottomOf="@+id/selectiontop"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:tint="@color/black" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/up5"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/help">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_margin="10dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.denzcoskun.imageslider.ImageSlider
+                            android:id="@+id/imageSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:iss_auto_cycle="true"
+                            app:iss_corner_radius="10"
+                            app:iss_delay="1000"
+                            app:iss_period="1000" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/xy"
+                app:layout_constraintTop_toBottomOf="@+id/up5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Whole Milk"
+
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="500ml  |  250kcal"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tvFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Rate your overall experince"
+                        android:textSize="16dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto"
+
+
+                        android:textColor="@color/green" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/rbStars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/green"
+                            android:numStars="5"
+
+
+                            android:progressBackgroundTint="#C0C0C0"
+                            android:progressTint="@color/green" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    >
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="10dp"
+
+
+                        android:hint="Enter Your Feedback">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextPhone3"
+                            android:importantForAutofill="no"
+                            android:gravity="top"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/roboto"
+
+
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnSend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+
+                        android:text="Send Feedback"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:layout_marginBottom="10dp"
+
+
+                    android:background="@color/white"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Address"
+                        android:fontFamily="@font/roboto"
+                        android:id="@+id/test"
+                        android:textSize="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PersonName"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14dp"
+                            android:id="@+id/namex"
+
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="|"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14dp"
+                            android:layout_marginStart="10dp"
+
+
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PhoneNo"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14dp"
+                            android:id="@+id/phonex"
+
+                            android:textColor="@color/black"
+                            />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Charaideo mens hostel, Tezpur University, Nappam, Tezpur-784028"
+
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/addressx"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="14dp"
+
+                        android:textColor="@color/black"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

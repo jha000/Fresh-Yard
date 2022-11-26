@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">@color/green</color>
+    <color name="purple_500">@color/black</color>
+    <color name="purple_700">@color/black</color>
+    <color name="teal_200">@color/green</color>
+    <color name="teal_700">@color/black</color>
+    <color name="white">#FFF</color>
+    <color name="puremilk">@color/white</color>
+    <color name="black">#191414</color>
+    <color name="kala">#191414</color>
+    <color name="blue">#2196F3</color>
+    <color name="grey">#44464D</color>
+    <color name="green">#1DB954</color>
+
+
+</resources>

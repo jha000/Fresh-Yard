@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+          android:icon="@drawable/home1"
+        android:iconTint="@color/green"
+
+
+
+          android:id="@+id/home"
+
+        />
+
+<!--    <item android:title="Product"-->
+<!--        android:icon="@drawable/product"-->
+<!--        android:id="@+id/product"-->
+
+
+<!--        />-->
+
+    <item android:title="Subscription"
+        android:icon="@drawable/subscribe"
+        android:id="@+id/subscribe"
+        android:iconTint="@color/black"
+
+
+        />
+
+    <item android:title="Profile"
+        android:icon="@drawable/profile"
+        android:id="@+id/profile"
+        android:iconTint="@color/black"
+
+
+        />
+
+    <item android:title="My Order"
+        android:icon="@drawable/myorder"
+        android:id="@+id/myorder"
+        android:iconTint="@color/black"
+
+
+        />
+
+</menu>
