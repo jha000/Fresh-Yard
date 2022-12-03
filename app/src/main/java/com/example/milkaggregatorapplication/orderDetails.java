@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -18,8 +19,11 @@ import android.widget.Toast;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class orderDetails extends AppCompatActivity {
 
@@ -31,6 +35,12 @@ public class orderDetails extends AppCompatActivity {
     Button sent;
 
     ImageView help,back;
+
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+
+    EditText input;
 
 
     @Override
@@ -49,6 +59,8 @@ public class orderDetails extends AppCompatActivity {
 
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
+
+        input = findViewById(R.id.input);
 
 
         tvFeedback = findViewById(R.id.tvFeedback);
@@ -139,6 +151,27 @@ public class orderDetails extends AppCompatActivity {
             public void onClick(View view) {
 
                 Toast.makeText(orderDetails.this,"Feedback Received",Toast.LENGTH_SHORT).show();
+
+                String getName = name.getText().toString();
+                String getRating = tvFeedback.getText().toString();
+                String getInput = input.getText().toString();
+                String userId = databaseReference.push().getKey();
+
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("Name", getName);
+                hashMap.put("rating", getRating);
+                hashMap.put("input", getInput);
+
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference();
+
+
+                databaseReference.child("Feedbacks")
+                        .child(userId)
+                        .child((getRating))
+                        .setValue(hashMap);
+
+
 
             }
         });

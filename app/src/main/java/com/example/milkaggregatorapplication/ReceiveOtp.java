@@ -29,8 +29,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import retrofit2.Call;
@@ -47,6 +50,10 @@ public class ReceiveOtp extends AppCompatActivity {
 
     private String verificationid;
     TextView text,change,userno;
+
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,6 +185,21 @@ public class ReceiveOtp extends AppCompatActivity {
 
                                                 }
                                             });
+
+
+
+                                            String getNo = userno.getText().toString();
+
+                                            HashMap<String, Object> hashMap = new HashMap<>();
+                                            hashMap.put("Number", getNo);
+
+                                            firebaseDatabase = FirebaseDatabase.getInstance();
+                                            databaseReference = firebaseDatabase.getReference();
+
+
+                                            databaseReference.child("Users")
+                                                    .setValue(hashMap);
+
 
 
                                             Intent intent = new Intent(getApplicationContext(), dashboard.class);

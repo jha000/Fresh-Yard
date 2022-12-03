@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,6 +50,10 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 
 
 
+    EditText pinEdit;
+    Button check;
+    TextView message;
+
     private TextView amountEdt;
 
     EditText name,mobile,address;
@@ -61,6 +66,7 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 
     Dialog paymentDialog,FailureDialog;
     Dialog myDialog;
+    String pin="784028",pin1="781001",pin2="781002";
 
 
     public static final String EXTRA_ID = "com.gtappdevelopers.gfgroomdatabase.EXTRA_ID";
@@ -111,6 +117,39 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 
 
 
+        String avaiable ="proceed with your order";
+        String error ="This item cannot be shipped to your location, please select different location.";
+
+
+        pinEdit = findViewById(R.id.pinEdit);
+        check = findViewById(R.id.check1);
+        message=findViewById(R.id.message);
+
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+
+
+                    if(pinEdit.getText().toString().equals(pin) || pinEdit.getText().toString().equals(pin1) || pinEdit.getText().toString().equals(pin2) )
+                    {
+                        message.setText("proceed with your order");
+                        message.setTextColor(Color.rgb(30, 215, 96));
+                        message.setVisibility(View.VISIBLE);
+
+                    }
+                    else
+                    {
+                        message.setText("This item cannot be shipped to your location, please select different location.");
+                        message.setTextColor(Color.RED);
+                        message.setVisibility(View.VISIBLE);
+                    }
+
+            }
+        });
 
 
 
@@ -360,7 +399,7 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 
 
 
-        databaseReference.child("Users")
+        databaseReference.child("Orders")
                 .child((userId))
                 .setValue(hashMap);
 
@@ -407,15 +446,24 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 
 
     public void ShowPopup(View v) {
-        TextView txtclose,add2,cod;
-        ProgressBar progress;
-        ImageView back;
 
-        Button btnFollow;
-        myDialog.setContentView(R.layout.custompopup);
+        if (pinEdit.length() == 0)
+        {
+            pinEdit.setError("Enter Pincode to proceed");
+        }
+        else if (pinEdit.getText().toString().equals(pin) || pinEdit.getText().toString().equals(pin1) || pinEdit.getText().toString().equals(pin2) )
+        {
 
-        back =(ImageView) myDialog.findViewById(R.id.arrow);
-        cod =(TextView) myDialog.findViewById(R.id.cod);
+
+            TextView txtclose, add2, cod;
+            ProgressBar progress;
+            ImageView back;
+
+            Button btnFollow;
+            myDialog.setContentView(R.layout.custompopup);
+
+            back = (ImageView) myDialog.findViewById(R.id.arrow);
+            cod = (TextView) myDialog.findViewById(R.id.cod);
 
 //        cod.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -446,55 +494,48 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 //
 //        });
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                myDialog.dismiss();
-            }
-        });
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    myDialog.dismiss();
+                }
+            });
 
 
+            txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+            progress = (ProgressBar) myDialog.findViewById(R.id.progressbar);
 
-        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
-        progress =(ProgressBar) myDialog.findViewById(R.id.progressbar);
-
-        add2 = (TextView) myDialog.findViewById(R.id.textadd);
+            add2 = (TextView) myDialog.findViewById(R.id.textadd);
 //        amountEdt1 = (EditText) myDialog.findViewById(R.id.edit1);
 //
 
-        String no= amountEdt.getText().toString();
-        add2.setText(no);
+            String no = amountEdt.getText().toString();
+            add2.setText(no);
 
-        name = (EditText) myDialog.findViewById(R.id.entername);
-
-
-
-        mobile = (EditText) myDialog.findViewById(R.id.entern0);
-
-        address = (EditText) myDialog.findViewById(R.id.enteradd);
-
-        Intent intent = getIntent();
-        if (intent.hasExtra(EXTRA_ID)) {
-            // if we get id for our data then we are
-            // setting values to our edit text fields.
-            product.setText(intent.getStringExtra(EXTRA_COURSE_NAME));
-            quantity.setText(intent.getStringExtra(EXTRA_DESCRIPTION));
-            amountEdt.setText(intent.getStringExtra(EXTRA_DURATION));
-        }
+            name = (EditText) myDialog.findViewById(R.id.entername);
 
 
+            mobile = (EditText) myDialog.findViewById(R.id.entern0);
+
+            address = (EditText) myDialog.findViewById(R.id.enteradd);
+
+            Intent intent = getIntent();
+            if (intent.hasExtra(EXTRA_ID)) {
+                // if we get id for our data then we are
+                // setting values to our edit text fields.
+                product.setText(intent.getStringExtra(EXTRA_COURSE_NAME));
+                quantity.setText(intent.getStringExtra(EXTRA_DESCRIPTION));
+                amountEdt.setText(intent.getStringExtra(EXTRA_DURATION));
+            }
 
 
-
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                progress.setVisibility(View.VISIBLE);
-                txtclose.setVisibility(View.GONE);
+            txtclose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 
+                    progress.setVisibility(View.VISIBLE);
+                    txtclose.setVisibility(View.GONE);
 
 
 //                String courseName = name.getText().toString();
@@ -509,131 +550,121 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 //                myDialog.dismiss();
 
 
-                // on below line we are getting
-                // amount that is entered by user.
-                String samount = amountEdt.getText().toString();
+                    // on below line we are getting
+                    // amount that is entered by user.
+                    String samount = amountEdt.getText().toString();
 
-                // rounding off the amount.
-                int amount = Math.round(Float.parseFloat(samount) * 100);
+                    // rounding off the amount.
+                    int amount = Math.round(Float.parseFloat(samount) * 100);
 
-                // initialize Razorpay account.
-                Checkout checkout = new Checkout();
+                    // initialize Razorpay account.
+                    Checkout checkout = new Checkout();
 
-                // set your id as below
-                checkout.setKeyID("rzp_live_3B17Ixk1cDL2Zz");
-
-
+                    // set your id as below
+                    checkout.setKeyID("rzp_live_3B17Ixk1cDL2Zz");
 
 
-                // set image
-                checkout.setImage(R.drawable.milk1rem);
+                    // set image
+                    checkout.setImage(R.drawable.milk1rem);
 
-                // initialize json object
-                JSONObject object = new JSONObject();
-                try {
-                    // to put name
-                    object.put("name", "Milk Aggregator");
+                    // initialize json object
+                    JSONObject object = new JSONObject();
+                    try {
+                        // to put name
+                        object.put("name", "Milk Aggregator");
 
-                    // put description
-                    object.put("description", "Test payment");
+                        // put description
+                        object.put("description", "Test payment");
 
-                    // to set theme color
-                    object.put("theme.color", "#23a847");
+                        // to set theme color
+                        object.put("theme.color", "#23a847");
 
-                    // put the currency
-                    object.put("currency", "INR");
+                        // put the currency
+                        object.put("currency", "INR");
 
-                    // put amount
-                    object.put("amount", amount);
+                        // put amount
+                        object.put("amount", amount);
 
-                    // put mobile number
-                    object.put("prefill.contact", "");
+                        // put mobile number
+                        object.put("prefill.contact", "");
 
-                    // put email
-                    object.put("prefill.email", "");
-
-
+                        // put email
+                        object.put("prefill.email", "");
 
 
-
-
-
-
-                    // open razorpay to checkout activity
-                    checkout.open(selection.this, object);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        // open razorpay to checkout activity
+                        checkout.open(selection.this, object);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
-        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        myDialog.show();
-    }
-
-
-    @Override
-    public void onPaymentSuccess(String s) {
-
-        final ProgressBar progressBar =  findViewById(R.id.progressbarforotp);
-
-//
-//
-
-        myDialog.dismiss();
-//
-        paymentDialog.show();
-
-        String value = name.getText().toString().trim();
-        String value1 = mobile.getText().toString().trim();
-        String value2 = address.getText().toString().trim();
-        SharedPreferences sharedPref = getSharedPreferences("myKey", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("value", value);
-        editor.putString("x", value1);
-
-        editor.putString("y", value2);
-        editor.apply();
-
-        String courseName = product.getText().toString();
-        String courseDesc = quantity.getText().toString();
-        String courseDuration = amountEdt.getText().toString();
-        if (courseName.isEmpty() || courseDesc.isEmpty() || courseDuration.isEmpty()) {
-
-            return;
+            });
+            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            myDialog.show();
+        }
+        else
+            Toast.makeText(this, "Please select different location to proceed", Toast.LENGTH_SHORT).show();
         }
 
-        // calling a method to save our course.
-        saveCourse(courseName, courseDesc, courseDuration);
+
+        @Override
+        public void onPaymentSuccess (String s){
+
+            final ProgressBar progressBar = findViewById(R.id.progressbarforotp);
+
+//
+//
+
+            myDialog.dismiss();
+//
+            paymentDialog.show();
+
+            String value = name.getText().toString().trim();
+            String value1 = mobile.getText().toString().trim();
+            String value2 = address.getText().toString().trim();
+            SharedPreferences sharedPref = getSharedPreferences("myKey", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("value", value);
+            editor.putString("x", value1);
+
+            editor.putString("y", value2);
+            editor.apply();
+
+            String courseName = product.getText().toString();
+            String courseDesc = quantity.getText().toString();
+            String courseDuration = amountEdt.getText().toString();
+            if (courseName.isEmpty() || courseDesc.isEmpty() || courseDuration.isEmpty()) {
+
+                return;
+            }
+
+            // calling a method to save our course.
+            saveCourse(courseName, courseDesc, courseDuration);
 
 
+            String getName = name.getText().toString();
+            String getEmail = mobile.getText().toString();
+            String getAddress = address.getText().toString();
+            String getProduct = product.getText().toString();
+            String getAmount = amountEdt.getText().toString();
 
 
-        String getName =name.getText().toString();
-        String getEmail=mobile.getText().toString();
-        String getAddress =address.getText().toString();
-        String getProduct=product.getText().toString();
-        String getAmount=amountEdt.getText().toString();
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("Name", getName);
+            hashMap.put("Mobile", getEmail);
+            hashMap.put("Address", getAddress);
+            hashMap.put("Product", getProduct);
+            hashMap.put("Amount", getAmount);
 
 
-        HashMap<String,Object>hashMap=new HashMap<>();
-        hashMap.put("Name",getName);
-        hashMap.put("Mobile",getEmail);
-        hashMap.put("Address",getAddress);
-        hashMap.put("Product",getProduct);
-        hashMap.put("Amount",getAmount);
+            firebaseDatabase = FirebaseDatabase.getInstance();
+            databaseReference = firebaseDatabase.getReference();
+            String userId = databaseReference.push().getKey();
 
 
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference();
-        String userId = databaseReference.push().getKey();
-
-
-
-
-
-        databaseReference.child("Users")
-                .child((userId))
-                .setValue(hashMap);
+            databaseReference.child("Orders")
+                    .child((userId))
+                    .setValue(hashMap);
 
 //        databaseReference.child("User")
 //                .child((getName))
@@ -641,44 +672,48 @@ public class selection extends AppCompatActivity implements PaymentResultListene
 //                .setValue(hashMap);
 
 
-    }
-
-    @Override
-    public void onPaymentError(int i, String s) {
-
-        final ProgressBar progressBar =  findViewById(R.id.progressbarforotp);
-//
-//
-        myDialog.dismiss();
-
-
-//
-
-        FailureDialog.show();
-
-    }
-
-
-    private void saveCourse(String courseName, String courseDescription, String courseDuration) {
-        // inside this method we are passing
-        // all the data via an intent.
-        Intent data = new Intent();
-
-        // in below line we are passing all our course detail.
-        data.putExtra(EXTRA_COURSE_NAME, courseName);
-        data.putExtra(EXTRA_DESCRIPTION, courseDescription);
-        data.putExtra(EXTRA_DURATION, courseDuration);
-        int id = getIntent().getIntExtra(EXTRA_ID, -1);
-        if (id != -1) {
-            // in below line we are passing our id.
-            data.putExtra(EXTRA_ID, id);
         }
 
-        // at last we are setting result as data.
-        setResult(RESULT_OK, data);
 
-        // displaying a toast message after adding the data
+        @Override
+        public void onPaymentError ( int i, String s){
 
-    }
+            final ProgressBar progressBar = findViewById(R.id.progressbarforotp);
+//
+//
+            myDialog.dismiss();
+
+
+//
+
+            FailureDialog.show();
+
+        }
+
+
+
+        private void saveCourse (String courseName, String courseDescription, String courseDuration)
+        {
+            // inside this method we are passing
+            // all the data via an intent.
+            Intent data = new Intent();
+
+            // in below line we are passing all our course detail.
+            data.putExtra(EXTRA_COURSE_NAME, courseName);
+            data.putExtra(EXTRA_DESCRIPTION, courseDescription);
+            data.putExtra(EXTRA_DURATION, courseDuration);
+            int id = getIntent().getIntExtra(EXTRA_ID, -1);
+            if (id != -1) {
+                // in below line we are passing our id.
+                data.putExtra(EXTRA_ID, id);
+            }
+
+            // at last we are setting result as data.
+            setResult(RESULT_OK, data);
+
+            // displaying a toast message after adding the data
+
+        }
+
 
 }

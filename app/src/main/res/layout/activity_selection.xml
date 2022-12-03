@@ -15,6 +15,7 @@
         android:scrollbars="vertical"
         android:layout_marginBottom="75dp"
 
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -182,6 +183,7 @@
             android:layout_height="wrap_content"
             android:text="500ml | 250kcal"
             android:id="@+id/quantity"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/roboto" 
             app:layout_constraintTop_toBottomOf="@id/whole"
@@ -193,7 +195,7 @@
 
             android:textSize="14dp"
             android:textStyle="italic"
-            android:textColor="@color/black"/>
+            />
 
         </LinearLayout>
 
@@ -272,7 +274,7 @@
                     android:gravity="center"
                     android:text="One Time"
 
-                    android:textColor="@color/black"
+                    
 
                     android:textSize="16dp"
                     android:fontFamily="@font/roboto" 
@@ -283,10 +285,11 @@
                     android:id="@+id/dam1"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:layout_marginTop="10dp"
                     android:text="1.00"
                     android:padding="5dp"
-                    android:textColor="@color/black"
+                    
                     android:gravity="center"
                     android:textSize="16dp"
                     android:textStyle="italic"
@@ -306,7 +309,7 @@
                     android:clickable="true"
                     android:gravity="center"
                     android:text="Silver Plan"
-                    android:textColor="@color/black"
+                    
 
 
                     android:textSize="16dp"
@@ -321,12 +324,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="2dp"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="10dp"
                     android:padding="5dp"
                     android:foreground="@drawable/strike"
 
                     android:text="₹4.69"
-                    android:textColor="@color/black"
+                    
                     android:textSize="16dp"
 
 
@@ -340,9 +344,10 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:textColor="@color/black"
                     android:text="2.50"
                     android:gravity="center"
-                    android:textColor="@color/black"
+                    
                     android:padding="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_marginBottom="10dp"
@@ -365,22 +370,114 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check wether the product is deliverd to your area"
+                app:layout_constraintTop_toBottomOf="@+id/label"
+                
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:id="@+id/check"
+                android:fontFamily="@font/roboto"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pincode"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="16dp"
+
+
+
+
+                    android:hint="enter pincode">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:layout_width="match_parent"
+                        android:id="@+id/pinEdit"
+
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/green"
+                    android:id="@+id/check1"
+                    android:textColor="@color/white"
+
+                    android:layout_gravity="center_vertical"
+                    android:text="Check"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/message"
+                app:layout_constraintTop_toBottomOf="@id/pincode"
+                android:visibility="invisible"
+                android:text="This item cannot be shipped to your location, please select different location."
+
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
 
         android:background="@color/green"
         android:elevation="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
 
 
@@ -398,7 +495,7 @@
 
 
             android:textSize="16dp"
-            android:fontFamily="@font/roboto" 
+            android:fontFamily="@font/roboto"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -416,7 +513,7 @@
             android:textSize="16dp"
             android:textStyle="italic"
 
-            android:fontFamily="@font/roboto" 
+            android:fontFamily="@font/roboto"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/total"
@@ -437,10 +534,12 @@
             android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:fontFamily="@font/roboto" 
+            android:fontFamily="@font/roboto"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
