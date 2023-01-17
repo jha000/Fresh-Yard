@@ -1,40 +1,42 @@
-package com.example.milkaggregatorapplication.model;
+package com.example.milkaggregatorapplication.model
 
-public class RequestModel{
-	private Template template;
-	private String messaging_product;
-	private String to;
-	private String type;
+import com.example.milkaggregatorapplication.CourseModal.id
+import com.example.milkaggregatorapplication.CourseModal.courseName
+import com.example.milkaggregatorapplication.CourseModal.courseDescription
+import com.example.milkaggregatorapplication.CourseModal.courseDuration
+import com.example.milkaggregatorapplication.Dao.allCourses
+import com.example.milkaggregatorapplication.Dao.insert
+import com.example.milkaggregatorapplication.Dao.update
+import com.example.milkaggregatorapplication.Dao.delete
+import com.example.milkaggregatorapplication.Dao.deleteAllCourses
+import com.example.milkaggregatorapplication.model.MessagesItem
+import com.example.milkaggregatorapplication.model.ContactsItem
+import androidx.room.Database
+import com.example.milkaggregatorapplication.CourseModal
+import androidx.room.RoomDatabase
+import com.example.milkaggregatorapplication.CourseDatabase
+import android.os.AsyncTask
+import kotlin.jvm.Synchronized
+import androidx.room.Room
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.milkaggregatorapplication.CourseDatabase.PopulateDbAsyncTask
+import com.example.milkaggregatorapplication.CourseRVAdapter
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import com.example.milkaggregatorapplication.R
+import android.content.Intent
+import com.example.milkaggregatorapplication.orderDetails
+import android.widget.TextView
+import android.app.Application
+import androidx.lifecycle.LiveData
+import com.example.milkaggregatorapplication.CourseRepository.InsertCourseAsyncTask
+import com.example.milkaggregatorapplication.CourseRepository.UpdateCourseAsyncTask
+import com.example.milkaggregatorapplication.CourseRepository.DeleteCourseAsyncTask
+import com.example.milkaggregatorapplication.CourseRepository.DeleteAllCoursesAsyncTask
 
-	public void setTemplate(Template template){
-		this.template = template;
-	}
-
-	public Template getTemplate(){
-		return template;
-	}
-
-	public void setMessagingProduct(String messagingProduct){
-		this.messaging_product = messagingProduct;
-	}
-
-	public String getMessagingProduct(){
-		return messaging_product;
-	}
-
-	public void setTo(String to){
-		this.to = to;
-	}
-
-	public String getTo(){
-		return to;
-	}
-
-	public void setType(String type){
-		this.type = type;
-	}
-
-	public String getType(){
-		return type;
-	}
+class RequestModel {
+    var template: Template? = null
+    var messagingProduct: String? = null
+    var to: String? = null
+    var type: String? = null
 }
