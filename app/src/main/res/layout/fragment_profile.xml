@@ -12,7 +12,6 @@
         android:layout_height="0dp"
         android:overScrollMode="ifContentScrolls"
         android:scrollbars="vertical"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -39,45 +38,41 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow"
+                android:src="@drawable/backbutton"
+                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/white" />
 
-<!--            <ImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/setting_24"-->
-
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:tint="@color/white" />-->
-
-
-
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/setting_24"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
 
 
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="0dp"
-        android:elevation="4dp"
-
-
-        android:gravity="center"
-        android:fontFamily="@font/roboto" 
-
-
-        android:text="Profile"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+                android:fontFamily="@font/urbanist"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -90,7 +85,7 @@
         android:elevation="4dp"
 
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,14 +96,16 @@
                 android:id="@+id/floatingActionButton"
                 android:layout_width="39dp"
                 android:layout_height="38dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginEnd="8dp"
 
 
                 android:layout_marginBottom="4dp"
+                android:clickable="true"
+
                 android:elevation="4dp"
 
-                android:clickable="true"
-                android:src="@drawable/plus"
+
+                android:src="@drawable/fav1"
                 app:layout_constraintBottom_toBottomOf="@+id/profile_image"
                 app:layout_constraintEnd_toEndOf="@+id/profile_image"
                 tools:ignore="MissingConstraints" />
@@ -117,11 +114,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="User"
+                android:letterSpacing="0.1"
+
+                android:id="@+id/user"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="normal"
+                android:textStyle="bold"
+                android:layout_marginBottom="60dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto"
+                android:fontFamily="@font/urbanist"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:gravity="center"
@@ -139,7 +140,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="-50dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
 
                 app:layout_constraintTop_toBottomOf="@+id/x"
                 android:orientation="vertical"
@@ -148,16 +152,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:elevation="0dp"
 
 
-                    android:padding="16dp"
+
+                    android:paddingStart="16dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
                     android:orientation="vertical"
-                    android:background="@color/white"
+                    android:background="@drawable/box"
                     >
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         >
 
@@ -165,6 +177,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
+                        app:tint="@color/BuyButton"
+                        android:layout_marginLeft="10dp"
+
                         android:src="@drawable/person" />
 
                     <TextView
@@ -172,11 +187,12 @@
                         android:layout_height="wrap_content"
                         android:text="Name"
                         android:textSize="14dp"
+                        android:textStyle="bold"
 
                         android:layout_weight="1"
 
-                        android:fontFamily="@font/roboto"
-                        android:textColor="@color/grey" />
+                        android:fontFamily="@font/urbanist"
+                        android:textColor="@color/BuyButton" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -187,7 +203,7 @@
                             android:id="@+id/nameEdit"
 
 
-                            app:tint="@color/green"
+                            app:tint="@color/black"
 
 
                             android:src="@drawable/edit" />
@@ -198,6 +214,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+
                         >
 
                         <ImageView
@@ -212,13 +229,16 @@
                             android:layout_height="wrap_content"
                             android:text="Abhishek Jha"
                             android:textSize="16dp"
+                            android:layout_marginLeft="10dp"
                             android:id="@+id/name"
 
-                            android:fontFamily="@font/roboto"
+                            android:fontFamily="@font/urbanist"
                             android:textColor="@color/black"
                             />
 
                     </LinearLayout>
+
+
 
                 </LinearLayout>
 
@@ -226,24 +246,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:padding="16dp"
+                    android:paddingStart="16dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:paddingEnd="16dp"
 
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:elevation="0dp"
                     android:layout_marginTop="10dp"
 
+
                     android:orientation="vertical"
-                    android:background="@color/white"
+
+                    android:background="@drawable/box"
                     >
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         >
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:tint="@color/BuyButton"
                             android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
                             android:src="@drawable/phone" />
 
                         <TextView
@@ -252,9 +283,10 @@
                             android:text="Phone"
                             android:textSize="14dp"
                             android:layout_weight="1"
+                            android:textStyle="bold"
 
-                            android:fontFamily="@font/roboto"
-                            android:textColor="@color/grey" />
+                            android:fontFamily="@font/urbanist"
+                            android:textColor="@color/BuyButton" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -263,7 +295,7 @@
                             android:id="@+id/phoneEdit"
 
                             android:gravity="end"
-                            app:tint="@color/green"
+                            app:tint="@color/black"
 
 
                             android:src="@drawable/edit" />
@@ -273,6 +305,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         >
 
@@ -290,7 +323,8 @@
                             android:textSize="16dp"
                             android:id="@+id/number"
 
-                            android:fontFamily="@font/roboto"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/urbanist"
                             android:textColor="@color/black"
                             />
 
@@ -302,15 +336,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
-                    android:padding="16dp"
+                    android:elevation="0dp"
 
                     android:orientation="vertical"
-                    android:background="@color/white"
+                    android:background="@drawable/box"
                     >
 
                     <LinearLayout
                         android:layout_width="match_parent"
+
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         >
@@ -319,6 +361,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            app:tint="@color/BuyButton"
                             android:src="@drawable/email" />
 
                         <TextView
@@ -327,9 +371,10 @@
                             android:text="Email"
                             android:textSize="14dp"
                             android:layout_weight="1"
+                            android:textStyle="bold"
 
-                            android:fontFamily="@font/roboto"
-                            android:textColor="@color/grey" />
+                            android:fontFamily="@font/urbanist"
+                            android:textColor="@color/BuyButton" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -338,7 +383,7 @@
 
                             android:gravity="end"
                             android:id="@+id/emailEdit"
-                            app:tint="@color/green"
+                            app:tint="@color/black"
 
 
                             android:src="@drawable/edit" />
@@ -348,6 +393,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         >
 
@@ -362,10 +408,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="jha85561@gmail.com"
+                            android:layout_marginLeft="10dp"
                             android:textSize="16dp"
                             android:id="@+id/email"
 
-                            android:fontFamily="@font/roboto"
+                            android:fontFamily="@font/urbanist"
                             android:textColor="@color/black"
                             />
 
@@ -377,23 +424,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:padding="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="16dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:paddingBottom="16dp"
+                    android:elevation="0dp"
 
                     android:orientation="vertical"
-                    android:background="@color/white"
+                    android:background="@drawable/box"
                     >
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         >
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:tint="@color/BuyButton"
+                            android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:src="@drawable/place" />
 
@@ -403,9 +458,10 @@
                             android:text="Address"
                             android:textSize="14dp"
                             android:layout_weight="1"
+                            android:textStyle="bold"
 
-                            android:fontFamily="@font/roboto"
-                            android:textColor="@color/grey" />
+                            android:fontFamily="@font/urbanist"
+                            android:textColor="@color/BuyButton" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -413,7 +469,7 @@
                             android:layout_marginRight="10dp"
 
                             android:gravity="end"
-                            app:tint="@color/green"
+                            app:tint="@color/black"
                             android:id="@+id/addEdit"
 
 
@@ -424,6 +480,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         >
 
@@ -440,8 +497,9 @@
                             android:text="501-301 Hyderabad, Telangana"
                             android:textSize="16dp"
                             android:id="@+id/address"
+                            android:layout_marginLeft="10dp"
 
-                            android:fontFamily="@font/roboto"
+                            android:fontFamily="@font/urbanist"
                             android:textColor="@color/black"
                             />
 
@@ -451,56 +509,134 @@
 
 
 
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/scrool2"
+                android:id="@+id/policy"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ABOUT US"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="16dp"
+
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/urbanist"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TERMS OF USE"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/urbanist"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PRIVACY POLICY"
+                    android:layout_marginStart="16dp"
+
+
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/urbanist"
+                    android:textSize="14sp"/>
+
+
+
+
             </LinearLayout>
 
 
-
-
-
-
-
-
-
-
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/logout"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:text="Delete Account"-->
-<!--        android:background="@color/green"-->
-<!--        android:elevation="10dp"-->
-<!--        android:padding="10dp"-->
-<!--        android:clickable="true"-->
-<!--        android:textColor="@color/white"-->
-
-<!--        android:gravity="center"-->
-<!--        android:fontFamily="@font/roboto" -->
-<!--        android:textSize="20sp"-->
-<!--        android:layout_margin="30dp"/>-->
-
-            <TextView
+            <Button
                 android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:background="@color/green"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/black"
+
                 android:clickable="true"
-                android:elevation="2dp"
-                android:gravity="center"
                 android:padding="10dp"
-                android:text="Logout"
+
+                android:gravity="center"
+                android:letterSpacing="0.1"
+
+                android:text="Login"
                 android:textColor="@color/white"
+                android:textStyle="bold"
+
                 android:textSize="16dp"
 
-                android:fontFamily="@font/roboto"
+                android:fontFamily="@font/urbanist"
+
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/policy" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/f1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="50dp"
+
+                android:gravity="center"
+
+                android:text="Fresh Yard"
+
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/urbanist"
+
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logout" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/f2"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+
+
+                android:text="Version: 1.0"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/urbanist"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/scrool2" />
+                app:layout_constraintTop_toBottomOf="@id/f1" />
 
 
 

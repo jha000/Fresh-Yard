@@ -5,19 +5,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F8F3"
+    android:background="@color/white"
     tools:context=".spash">
-  
-  <com.airbnb.lottie.LottieAnimationView
-      android:layout_width="400dp"
-      android:layout_height="400dp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintBottom_toBottomOf="parent"
-      android:id="@+id/lottie"
-      android:elevation="5dp"
-    app:lottie_rawRes="@raw/delivery"
-    app:lottie_autoPlay="true"/>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <ImageView
+      android:layout_width="200dp"
+      android:layout_height="200dp"
+      android:src="@drawable/logoff"
+
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="ContentDescription" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

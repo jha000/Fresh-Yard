@@ -12,544 +12,292 @@
     tools:context=".ReceiveOtp"
     tools:ignore="SpeakableTextPresentCheck">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:overScrollMode="ifContentScrolls"
-        android:scrollbars="vertical"
-        android:fillViewport="true"
-
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp">
-
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
+        android:background="@drawable/topnavbag"
+        android:paddingEnd="16dp"
 
-
-
-        >
-
-
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="52dp">
+        tools:ignore="MissingConstraints">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/locationid"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
 
-        <!--    <ImageView-->
-        <!--        android:id="@+id/imageView9"-->
-        <!--        android:layout_width="242dp"-->
-        <!--        android:layout_height="140dp"-->
-        <!--        android:layout_marginTop="30dp"-->
-        <!--        android:layout_marginRight="150dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:layout_constraintTop_toTopOf="parent"-->
-        <!--        app:srcCompat="@drawable/c" />-->
-
-        <!--    <ImageView-->
-        <!--        android:id="@+id/imageView10"-->
-        <!--        android:layout_width="292dp"-->
-        <!--        android:layout_height="137dp"-->
-        <!--        android:layout_marginLeft="120dp"-->
-        <!--        android:layout_marginTop="50dp"-->
-        <!--        android:layout_marginRight="10dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintHorizontal_bias="0.865"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/imageView9"-->
-        <!--        app:srcCompat="@drawable/cloud1" />-->
-
-        <!--    <ImageView-->
-        <!--        android:id="@+id/imageView11"-->
-        <!--        android:layout_width="273dp"-->
-        <!--        android:layout_height="210dp"-->
-        <!--        android:layout_marginLeft="140dp"-->
-        <!--        android:layout_marginTop="40dp"-->
-        <!--        android:layout_marginRight="20dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/imageView10"-->
-        <!--        app:srcCompat="@drawable/cowrem" />-->
-
-        <!--    <ImageView-->
-        <!--        android:id="@+id/imageView12"-->
-        <!--        android:layout_width="125dp"-->
-        <!--        android:layout_height="126dp"-->
-        <!--        android:layout_marginTop="80dp"-->
-        <!--        android:layout_marginRight="170dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="@+id/imageView11"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/imageView11"-->
-        <!--        app:srcCompat="@drawable/milk1rem" />-->
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-
-
-            app:layout_constraintEnd_toEndOf="parent"
-
-
+            android:src="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
 
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <com.denzcoskun.imageslider.ImageSlider
-                        android:id="@+id/imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        app:iss_auto_cycle="true"
-
-                        app:iss_delay="1000"
-                        app:iss_period="1000" />
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="16dp"
-            android:padding="10dp"
-            android:elevation="2dp"
-
-            android:background="@drawable/rectangle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/textView7"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="10dp"-->
-            <!--                android:layout_marginBottom="30dp"-->
-            <!--                            android:gravity="center"-->
-            <!--                            android:text="100% Milk - 0% Water"-->
-            <!--                            android:textColor="@color/puremilk"-->
-            <!--                            android:textSize="20sp"-->
-            <!--                            android:textStyle="bold"-->
-            <!--                            android:fontFamily="@font/roboto"-->
-            <!--                app:layout_constraintBottom_toTopOf="@+id/textView"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintHorizontal_bias="0.0"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-
-            <Button
-
-                android:id="@+id/buttonverify"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="Submit OTP"
-                android:textAllCaps="false"
-                android:fontFamily="@font/roboto"
-                android:textColor="@color/white"
-
-                app:backgroundTint="@color/green"
-
-                app:layout_constraintBottom_toTopOf="@+id/textView9"
-                app:layout_constraintEnd_toEndOf="@+id/textView9"
-                app:layout_constraintStart_toStartOf="@+id/textView9" />
-
-            <ProgressBar
-                android:id="@+id/Progressbarverifyotp"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-
-
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
-
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-
-                android:gravity="center"
-                android:text="By signing up, You agree to our Terms and conditions"
-                android:textColor="@color/grey"
-                android:fontFamily="@font/roboto"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
-            <!--    <LinearLayout-->
-            <!--        android:layout_width="match_parent"-->
-            <!--        android:layout_height="20dp"-->
-            <!--        android:layout_marginTop="10dp"-->
-
-            <!--        android:layout_marginBottom="10dp"-->
-            <!--        android:orientation="horizontal"-->
-            <!--        app:layout_constraintBottom_toTopOf="@+id/button2"-->
-            <!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"-->
-            <!--        tools:ignore="MissingConstraints">-->
-
-            <!--      <TextView-->
-            <!--          android:id="@+id/textView8"-->
-            <!--          android:layout_width="wrap_content"-->
-            <!--          android:layout_height="wrap_content"-->
-            <!--          android:layout_weight="1"-->
-            <!--          android:gravity="right"-->
-
-            <!--          android:text="Didn't receive OTP  " />-->
-
-            <!--      <TextView-->
-            <!--          android:id="@+id/textView10"-->
-            <!--          android:layout_width="wrap_content"-->
-            <!--          android:layout_height="wrap_content"-->
-            <!--          android:layout_weight="1"-->
-            <!--          android:gravity="left"-->
-            <!--          android:orientation="horizontal"-->
-            <!--          android:text="Resend OTP again"-->
-            <!--          android:textColor="@color/blue"-->
-
-            <!--          android:textStyle="bold" />-->
-
-            <!--    </LinearLayout>-->
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:gravity="left"
-                android:text="Let's get started"
-                android:textColor="@color/kala"
-                android:layout_marginBottom="5dp"
-                android:textSize="20dp"
-
-
-                android:fontFamily="@font/roboto"
-                app:layout_constraintBottom_toTopOf="@+id/linear1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:ems="10"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <EditText
-                    android:id="@+id/inputotp1"
-                    android:layout_width="40dp"
-                    android:layout_height="46dp"
-                    android:background="@drawable/blackradius"
-                    android:gravity="center"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:fontFamily="@font/roboto"
-
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:textColor="@color/kala"
-                    android:textSize="16sp"
-
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    android:id="@+id/inputotp2"
-                    android:layout_width="40dp"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:background="@drawable/blackradius"
-                    android:gravity="center"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:fontFamily="@font/roboto"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:textColor="@color/kala"
-                    android:textSize="16sp"
-
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    android:id="@+id/inputotp3"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:background="@drawable/blackradius"
-                    android:gravity="center"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:fontFamily="@font/roboto"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:textColor="@color/kala"
-                    android:textSize="16sp"
-
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    android:id="@+id/inputotp4"
-                    android:layout_width="40dp"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="4dp"
-                    android:fontFamily="@font/roboto"
-                    android:layout_marginLeft="4dp"
-                    android:background="@drawable/blackradius"
-                    android:gravity="center"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:textColor="@color/kala"
-                    android:textSize="16sp"
-
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    android:id="@+id/inputotp5"
-                    android:layout_width="40dp"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:background="@drawable/blackradius"
-                    android:gravity="center"
-                    android:fontFamily="@font/roboto"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:textColor="@color/kala"
-                    android:textSize="16sp"
-
-                    tools:ignore="LabelFor" />
-
-                <EditText
-                    android:id="@+id/inputotp6"
-                    android:layout_width="40dp"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:background="@drawable/blackradius"
-                    android:gravity="center"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:fontFamily="@font/roboto"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:textColor="@color/kala"
-                    android:textSize="16sp"
-
-                    tools:ignore="LabelFor" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/buttonverify"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="MissingConstraints">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="didn't receive the otp"
-                    android:fontFamily="@font/roboto"
-                    android:textColor="@color/grey"
-
-                    android:textSize="10sp" />
-
-
-                <TextView
-                    android:id="@+id/textresendotp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="resend otp"
-                    android:textColor="@color/blue"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:id="@+id/linear1"
-                >
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:gravity="center"
-                    android:text="OTP has been sent to +91 "
-                    android:textColor="@color/grey"
-                    android:textSize="10sp"
-
-
-                    android:fontFamily="@font/roboto"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6300686049"
-                    android:id="@+id/notaken"
-                    android:textStyle="bold"
-                    android:textColor="@color/green"
-                    android:textSize="10sp"
-                    android:fontFamily="@font/roboto"
-                    />
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textSize="10sp"-->
-<!--                    android:fontFamily="@font/roboto"-->
-<!--                    android:id="@+id/change"-->
-<!--                    android:textColor="@color/blue"-->
-<!--                    android:text="  Change"/>-->
-
-
-
-
-            </LinearLayout>
-
-
-
-
-
-            <!--        <ImageView-->
-            <!--            android:id="@+id/imageView"-->
-
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="300dp"-->
-            <!--            app:layout_constraintBottom_toTopOf="@+id/textView7"-->
-            <!--            app:srcCompat="@drawable/cow"-->
-            <!--            tools:ignore="MissingConstraints"-->
-            <!--            tools:layout_editor_absoluteX="28dp" />-->
-
-
-            <!--        <ViewFlipper-->
-            <!--            android:id="@+id/flipper"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="300dp"-->
-            <!--            android:layout_gravity="center"-->
-            <!--            android:layout_marginBottom="0dp"-->
-            <!--            app:layout_constraintBottom_toTopOf="@+id/textView7"-->
-            <!--            tools:ignore="MissingConstraints" >-->
-
-            <!--        </ViewFlipper>-->
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/locid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:letterSpacing="0.1"
+            android:fontFamily="@font/urbanist"
+            android:text="Fresh Yard"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/locationid"
+            app:layout_constraintStart_toEndOf="@+id/locationid"
+            app:layout_constraintTop_toTopOf="@+id/locationid" />
+
+        <TextView
+            android:id="@+id/locid1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.1"
+            android:fontFamily="@font/urbanist"
+            android:text="Nutrition on it's way"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="@+id/locid"
+            app:layout_constraintTop_toBottomOf="@+id/locid" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rectangle"
+        android:elevation="0dp"
+        android:layout_marginTop="-75dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+
+        <Button
+
+            android:id="@+id/buttonverify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:gravity="center"
-            android:text="100% Milk - 0% Water"
-            android:layout_margin="10dp"
+
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/urbanist"
+            android:gravity="center"
+            android:text="Submit OTP"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
 
-            android:textColor="@color/green"
-            android:textSize="20dp"
             android:textStyle="bold"
 
-            android:fontFamily="@font/roboto"
+
+            app:backgroundTint="@color/black"
+
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9" />
+
+        <ProgressBar
+            android:id="@+id/Progressbarverifyotp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+
+
+            app:layout_constraintBottom_toBottomOf="@id/buttonverify"
+            app:layout_constraintEnd_toEndOf="@id/buttonverify"
+            app:layout_constraintStart_toStartOf="@id/buttonverify"
+            app:layout_constraintTop_toTopOf="@id/buttonverify"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/urbanist"
+            android:gravity="center"
+            android:text="By signing up, You agree to our Terms and conditions"
+            android:textColor="@color/grey"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/urbanist"
+            android:gravity="left"
+            android:text="Let's get started"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linear1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/up" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/inputotp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:hint="enter OTP"
+                android:importantForAutofill="yes"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/buttonverify"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist"
+                android:text="didn't receive the otp"
+                android:textColor="@color/black"
+
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/textresendotp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/urbanist"
+                android:text="resend otp"
+                android:textColor="@color/BuyButton"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/urbanist"
+                android:gravity="center"
+                android:text="OTP has been sent to +91 "
+                android:textColor="@color/black"
+
+
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/notaken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist"
+                android:text="6300686049"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/lottie2"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        app:lottie_rawRes="@raw/coconutanimation"-->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--        android:elevation="5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+

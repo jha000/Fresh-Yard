@@ -6,11 +6,22 @@
 
     android:layout_height="wrap_content"
 
-    android:background="#F3F8F3"
+
+    android:background="@drawable/prodbac"
 
 
     android:layout_gravity="center"
-    android:layout_width="350dp">
+    android:layout_width="match_parent">
+
+    <TextView
+        android:layout_width="75dp"
+        android:id="@+id/closedialog"
+        android:layout_height="5dp"
+        android:background="@drawable/dialogclose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ProgressBar
         android:layout_width="match_parent"
@@ -33,13 +44,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/closedialog"
+
+
         android:elevation="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/selectiontop"
         >
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -65,13 +78,14 @@
 
 
             android:text="Shipping Address"
+            android:textAllCaps="false"
 
-            android:textColor="@color/green"
+            android:textColor="@color/black"
             android:textSize="20dp"
 
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/urbanist"
             app:layout_constraintEnd_toStartOf="@+id/imageView3"
             app:layout_constraintStart_toEndOf="@+id/arrow"
             app:layout_constraintTop_toTopOf="parent" />
@@ -94,10 +108,13 @@
         android:id="@+id/finalAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
+
+
+        android:background="@drawable/sqbox"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
         android:layout_marginTop="10dp"
-
-        android:background="@color/white"
-
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,12 +125,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Amount to be paid"
+
             android:textColor="@color/black"
             android:textSize="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
 
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/urbanist"
             android:layout_marginStart="16sp"
 
 
@@ -130,13 +148,31 @@
             android:layout_marginEnd="16sp"
 
             android:id="@+id/textadd"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            android:fontFamily="@font/roboto" 
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:fontFamily="@font/urbanist" 
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="5dp"
+
+
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:fontFamily="@font/urbanist"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textadd"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -149,8 +185,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:layout_marginTop="16dp"
+
 
         app:layout_constraintTop_toBottomOf="@+id/finalAmount"
         android:orientation="vertical"
@@ -176,6 +212,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    app:tint="@color/BuyButton"
+
 
                     android:layout_marginStart="16dp"
 
@@ -183,33 +221,32 @@
 
 
 
-                <com.google.android.material.textfield.TextInputLayout
-
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-
-
-
-                    android:hint="Name">
 
                     <!--this is the actual edit text which takes the input-->
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/entername"
                         android:layout_width="match_parent"
 
                         android:importantForAutofill="no"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="16dp"
+
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="15dp"
+
+
+
+                        android:hint="Name"
+                        android:textColor="@color/black"
+                        android:background="@drawable/editbg"
                         android:inputType="text"
                         android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
+
+                        android:fontFamily="@font/urbanist"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+
 
 
             </LinearLayout>
@@ -238,34 +275,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    app:tint="@color/BuyButton"
                     android:layout_marginStart="16dp"
 
 
                     android:src="@drawable/phone" />
 
 
-                <com.google.android.material.textfield.TextInputLayout
 
-
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-
-
-                    android:hint="Phone">
 
                     <!--this is the actual edit text which takes the input-->
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/entern0"
                         android:importantForAutofill="no"
                         android:inputType="number"
                         android:textSize="16sp"
-                        android:fontFamily="@font/roboto"
+                        android:fontFamily="@font/urbanist"
+                        android:textColor="@color/black"
+                        android:background="@drawable/editbg"
+                        android:padding="15dp"
+
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+
+
+                        android:hint="Phone"
 
 
 
@@ -273,7 +309,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+
 
 
             </LinearLayout>
@@ -304,35 +340,33 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="16dp"
 
+                    app:tint="@color/BuyButton"
 
                     android:src="@drawable/place" />
 
 
-                <com.google.android.material.textfield.TextInputLayout
 
-
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-
-                    android:hint="Address">
 
                     <!--this is the actual edit text which takes the input-->
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/enteradd"
                         android:importantForAutofill="no"
                         android:inputType="text"
-                        android:fontFamily="@font/roboto"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+
+
+                        android:hint="Address"
+                        android:fontFamily="@font/urbanist"
+                        android:textColor="@color/black"
+                        android:background="@drawable/editbg"
+                        android:padding="15dp"
                         android:textSize="16sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
@@ -344,49 +378,66 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/scrool2"
+        tools:ignore="UselessLeaf">
+
+
+
+
     <TextView
         android:id="@+id/cod"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:background="@color/green"
         android:onClick="status"
-        android:layout_marginTop="10dp"
+
+
+        android:textSize="16dp"
+        android:textStyle="bold"
 
         android:elevation="2dp"
         android:gravity="center"
+        android:layout_weight="1"
 
-        android:padding="10dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:text="CASH ON DELIVERY"
 
-        android:textColor="@color/white"
-        android:fontFamily="@font/roboto"
-
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrool2" />
+        android:textColor="@color/black"
+        android:fontFamily="@font/urbanist"
+/>
 
     <TextView
         android:id="@+id/txtclose"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:textSize="16dp"
 
-        android:layout_marginTop="10dp"
-        android:background="@color/green"
-        android:layout_marginBottom="16dp"
+        android:background="@drawable/buybac"
+
 
         android:elevation="2dp"
+
         android:gravity="center"
-        android:fontFamily="@font/roboto"
-        android:padding="10dp"
+        android:fontFamily="@font/urbanist"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:text="PAY ONLINE"
 
         android:textColor="@color/white"
+        />
 
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cod" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

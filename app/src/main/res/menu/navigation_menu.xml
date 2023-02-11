@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Home"
-          android:icon="@drawable/home1"
-        android:iconTint="@color/green"
 
+          android:icon="@drawable/homem"
+        android:iconTint="@color/green"
 
 
           android:id="@+id/home"
@@ -12,22 +12,22 @@
         />
 
 <!--    <item android:title="Product"-->
-<!--        android:icon="@drawable/product"-->
-<!--        android:id="@+id/product"-->
+<!--        android:icon="@drawable/productg.xml"-->
+<!--        android:id="@+id/productg.xml"-->
 
 
 <!--        />-->
 
-    <item android:title="Subscription"
-        android:icon="@drawable/subscribe"
-        android:id="@+id/subscribe"
-        android:iconTint="@color/black"
+<!--    <item android:title="Subscription"-->
+<!--        android:icon="@drawable/dollerm"-->
+<!--        android:id="@+id/subscribe"-->
+<!--        android:iconTint="@color/black"-->
 
 
-        />
+<!--        />-->
 
     <item android:title="Profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/profilem"
         android:id="@+id/profile"
         android:iconTint="@color/black"
 
@@ -35,7 +35,7 @@
         />
 
     <item android:title="My Order"
-        android:icon="@drawable/myorder"
+        android:icon="@drawable/orderdetails"
         android:id="@+id/myorder"
         android:iconTint="@color/black"
 

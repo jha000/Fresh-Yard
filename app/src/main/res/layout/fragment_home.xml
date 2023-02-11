@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F3F8F3"
     android:layout_height="match_parent"
-    tools:context=".subscribeFragment">
+    android:background="#F3F8F3"
+    tools:context=".homeFragment">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:background="@drawable/topnavbag"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,39 +20,100 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <ImageView
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:id="@+id/no"
+            android:fontFamily="@font/urbanist"
+            android:gravity="left"
+            android:visibility="gone"
+            android:letterSpacing="0.1"
+            android:text="Generate"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/locationid"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_location"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
+
+            tools:ignore="ContentDescription" />
+
 
         <TextView
             android:id="@+id/locid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="501301,Hyderabad,Telangana"
-            android:fontFamily="@font/roboto"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/urbanist"
+            android:letterSpacing="0.1"
+            android:maxLines="1"
+            android:text="Fresh Yard"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/locationid"
             app:layout_constraintStart_toEndOf="@+id/locationid"
             app:layout_constraintTop_toTopOf="@+id/locationid" />
 
+        <TextView
+            android:id="@+id/locid11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/urbanist"
+            android:letterSpacing="0.1"
+            android:text="Are You Ready?"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+
+
+            app:layout_constraintStart_toStartOf="@+id/locationid"
+            app:layout_constraintTop_toBottomOf="@+id/locationid" />
+
+        <TextView
+            android:id="@+id/locid111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="0dp"
+
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/urbanist"
+            android:text="to take the first step towards healthy Assam"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+
+            app:layout_constraintStart_toStartOf="@+id/locationid"
+            app:layout_constraintTop_toBottomOf="@+id/locid11" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="0dp"
         android:overScrollMode="ifContentScrolls"
+
+
         android:scrollbars="vertical"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,399 +128,632 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
 
+
             >
 
+            <androidx.cardview.widget.CardView
 
-            <!--            <LinearLayout-->
-
-            <!--                android:id="@+id/milkbox"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
-
-
-            <!--                android:layout_margin="20dp"-->
-
-            <!--                android:background="@drawable/rectangle"-->
-            <!--                android:gravity="center"-->
-
-            <!--                android:orientation="vertical"-->
-
-            <!--                app:layout_constraintDimensionRatio="H,1:1"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/card">-->
-
-            <!--                <ImageView-->
-            <!--                    android:id="@+id/milksection"-->
-            <!--                    android:layout_width="150dp"-->
-            <!--                    android:layout_height="100dp"-->
-
-
-            <!--                    android:clickable="true"-->
-
-
-            <!--                    android:src="@drawable/milk1rem" />-->
-
-            <!--                <TextView-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:text="milk"-->
-            <!--                    android:textColor="@color/green"-->
-            <!--                    android:textSize="20sp"-->
-            <!--                    android:textStyle="bold"-->
-            <!--                    android:fontFamily="@font/roboto"  />-->
-
-
-            <!--            </LinearLayout>-->
-
-            <LinearLayout
-                android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
-                android:layout_marginTop="10dp"
-
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        >
-
-
-                        <com.denzcoskun.imageslider.ImageSlider
-                            android:id="@+id/imageSlider"
-
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            app:iss_auto_cycle="true"
-
-                            app:iss_delay="1000"
-                            app:iss_period="1000" />
-
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/scrool1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-
-
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/card"
-
-            android:orientation="horizontal"
-            >
-
-            <LinearLayout
-                android:id="@+id/refer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
 
+                android:layout_marginEnd="16dp"
                 android:orientation="vertical"
+                app:cardCornerRadius="20dp"
+
+
+                app:cardElevation="1dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/card">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_view_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tbac">
+
+
+                        <TextView
+                            android:id="@+id/textView62xx"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/urbanist"
+
+
+                            android:text="Fresh Yard"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="8dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/linearLayout32xx"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@mipmap/ic_launcher"
+                            app:layout_constraintBottom_toTopOf="@+id/linearLayout32xx"
+                            app:layout_constraintEnd_toStartOf="@+id/textView62xx"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout32xx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+
+                                    android:id="@+id/contentTemplete"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:fontFamily="@font/urbanist"
+                                    android:gravity="left"
+
+                                    android:letterSpacing="0.1"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+                            <ImageView
+
+                                android:id="@+id/rImage"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbars="none"
 
 
                 >
 
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="UselessLeaf">
 
-                    android:text="Refer your family and friends"
-                    android:textColor="@color/black"
 
+                    <androidx.cardview.widget.CardView
 
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/roboto" />
+                        android:layout_width="280dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
 
 
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical"
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:text="........xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..............................."
 
+                        app:cardCornerRadius="20dp"
 
-                    android:textColor="@color/grey"
-                    android:textSize="14dp"
+                        app:layout_constraintTop_toBottomOf="@+id/card">
 
-                    android:fontFamily="@font/roboto"  />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gradiant">
 
-                <TextView
-                    android:id="@+id/re"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
 
-                    android:background="@color/green"
+                            <LinearLayout
+                                android:id="@+id/linearLayout32"
+                                android:layout_width="match_parent"
 
-                    android:elevation="2dp"
-                    android:padding="5dp"
-                    android:clickable="true"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="12dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:text="Top Referral of the month gets 2k"
+                                        android:textColor="@color/white"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold" />
+
+<!--                                    <TextView-->
+
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginStart="12dp"-->
+<!--                                        android:id="@+id/generate"-->
+<!--                                        android:fontFamily="@font/urbanist"-->
+<!--                                        android:gravity="left"-->
+<!--                                        android:letterSpacing="0.1"-->
+<!--                                        android:text="Generate"-->
+<!--                                        android:textColor="@color/white"-->
+<!--                                        android:textSize="20dp"-->
+<!--                                        android:textStyle="bold" />-->
 
-                    android:text="Refer now"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
+<!--                                    <TextView-->
 
-                    android:textSize="16dp"
-                    android:fontFamily="@font/roboto"
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginStart="12dp"-->
+<!--                                        android:id="@+id/set"-->
+<!--                                        android:visibility="gone"-->
+<!--                                        android:fontFamily="@font/urbanist"-->
+<!--                                        android:gravity="left"-->
+<!--                                        android:letterSpacing="0.1"-->
+<!--                                        android:text="Generate"-->
+<!--                                        android:textColor="@color/white"-->
+<!--                                        android:textSize="20dp"-->
+<!--                                        android:textStyle="bold" />-->
 
-                    />
 
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="12dp"
+                                        android:id="@+id/refer"
+                                        android:backgroundTint="@color/white"
+                                        android:text="Refer Now"
+                                        android:textAllCaps="false"
+                                        android:layout_marginTop="5dp"
 
-            </LinearLayout>
+                                        android:textColor="@color/BuyButton"
+                                        android:textStyle="normal" />
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="16dp"
-                android:layout_height="100dp"
 
-                android:src="@drawable/refer"/>
+                                </LinearLayout>
 
-        </LinearLayout>
 
 
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/popular"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_margin="20dp"-->
-            <!--                android:gravity="center"-->
-            <!--                android:padding="20dp"-->
-            <!--                android:text="Most Popular Products"-->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:orientation="vertical"
+                                    >
 
-            <!--                android:textColor="@color/green"-->
-            <!--                android:textSize="25sp"-->
-            <!--                android:textStyle="bold"-->
-            <!--                android:fontFamily="@font/roboto" -->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/refer" />-->
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
 
+                                        android:fontFamily="@font/urbanist"
 
-            <!--            <LinearLayout-->
-            <!--                android:id="@+id/most"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
+                                        android:text="Congratulations you are "
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
 
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        >
 
-            <!--                android:layout_margin="30dp"-->
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/urbanist"
+                                            android:layout_marginEnd="2dp"
+                                            android:text="#"
+                                            android:textColor="@color/white"
+                                            android:textSize="25dp"
+                                            android:textStyle="bold" />
 
-            <!--                android:background="@drawable/rectangle"-->
-            <!--                android:gravity="center"-->
-            <!--                android:orientation="vertical"-->
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:id="@+id/rank"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/urbanist"
+                                            android:layout_marginEnd="5dp"
+                                            android:text="\?"
+                                            android:textColor="@color/white"
+                                            android:textSize="25dp"
+                                            android:textStyle="bold" />
 
-            <!--                android:padding="0dp"-->
+                                    </LinearLayout>
 
-            <!--                app:layout_constraintDimensionRatio="H,1:1"-->
 
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/popular">-->
+                                </LinearLayout>
 
-            <!--                <ImageView-->
-            <!--                    android:layout_width="146dp"-->
-            <!--                    android:layout_height="100dp"-->
 
-            <!--                    android:contentDescription="@string/app_name"-->
 
-            <!--                    android:src="@drawable/milk1rem" />-->
+                            </LinearLayout>
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:text="milk"-->
-            <!--                    android:textColor="@color/green"-->
-            <!--                    android:textSize="20sp"-->
-            <!--                    android:textStyle="bold"-->
-            <!--                    android:fontFamily="@font/roboto"  />-->
 
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!--            </LinearLayout>-->
 
-            <!--            <LinearLayout-->
-            <!--                android:id="@+id/most2"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
+                    </androidx.cardview.widget.CardView>
 
+                    <androidx.cardview.widget.CardView
 
-            <!--                android:layout_margin="30dp"-->
+                        android:layout_width="280dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
 
-            <!--                android:layout_marginTop="20dp"-->
-            <!--                android:background="@drawable/rectangle"-->
 
-            <!--                android:gravity="center"-->
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical"
+                        app:cardCornerRadius="20dp"
 
-            <!--                android:orientation="vertical"-->
-            <!--                android:padding="0dp"-->
+                        app:layout_constraintTop_toBottomOf="@+id/card">
 
-            <!--                app:layout_constraintDimensionRatio="H,1:1"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/popular">-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/d1">
 
-            <!--                <ImageView-->
-            <!--                    android:layout_width="150dp"-->
-            <!--                    android:layout_height="100dp"-->
 
-            <!--                    android:contentDescription="@string/app_name"-->
+                            <LinearLayout
+                                android:id="@+id/linearLayout3"
+                                android:layout_width="match_parent"
 
-            <!--                    android:src="@drawable/milk1rem" />-->
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:text="milk"-->
-            <!--                    android:textColor="@color/green"-->
-            <!--                    android:textSize="20sp"-->
-            <!--                    android:textStyle="bold"-->
-            <!--                    android:fontFamily="@font/roboto"  />-->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
+                                    <TextView
 
-            <!--            </LinearLayout>-->
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="Hey!!"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
 
+                                    <TextView
 
-            <!--            <LinearLayout-->
-            <!--                android:id="@+id/most3"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="Don't worry..."
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
 
+                                        android:textStyle="bold" />
 
-            <!--                android:layout_margin="30dp"-->
+                                    <TextView
+                                        android:layout_width="160dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="We got your needs covered"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
 
-            <!--                android:background="@drawable/rectangle"-->
-            <!--                android:gravity="center"-->
-            <!--                android:orientation="vertical"-->
+                                </LinearLayout>
 
-            <!--                android:padding="0dp"-->
 
-            <!--                app:layout_constraintDimensionRatio="H,1:1"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
+                                <ImageView
 
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:src="@drawable/e1" />
 
-            <!--                app:layout_constraintTop_toBottomOf="@+id/most">-->
 
-            <!--                <ImageView-->
-            <!--                    android:layout_width="150dp"-->
-            <!--                    android:layout_height="100dp"-->
+                            </LinearLayout>
 
-            <!--                    android:contentDescription="@string/app_name"-->
 
-            <!--                    android:src="@drawable/milk1rem" />-->
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:text="milk"-->
-            <!--                    android:textColor="@color/green"-->
-            <!--                    android:textSize="20sp"-->
-            <!--                    android:textStyle="bold"-->
-            <!--                    android:fontFamily="@font/roboto"  />-->
 
+                    </androidx.cardview.widget.CardView>
 
-            <!--            </LinearLayout>-->
+                    <androidx.cardview.widget.CardView
 
-            <!--            <LinearLayout-->
-            <!--                android:id="@+id/most4"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
+                        android:layout_width="280dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="16dp"
 
+                        android:layout_marginTop="20dp"
 
-            <!--                android:layout_margin="30dp"-->
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical"
 
-            <!--                android:background="@drawable/rectangle"-->
-            <!--                android:gravity="center"-->
-            <!--                android:orientation="vertical"-->
+                        app:cardCornerRadius="20dp"
 
-            <!--                android:padding="0dp"-->
+                        app:layout_constraintTop_toBottomOf="@+id/card">
 
-            <!--                app:layout_constraintDimensionRatio="H,1:1"-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/drawing3">
 
 
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                            <LinearLayout
+                                android:id="@+id/linearLayout31"
+                                android:layout_width="match_parent"
 
-            <!--                app:layout_constraintTop_toBottomOf="@+id/most2">-->
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
-            <!--                <ImageView-->
-            <!--                    android:layout_width="150dp"-->
-            <!--                    android:layout_height="100dp"-->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
-            <!--                    android:contentDescription="@string/app_name"-->
+                                    <TextView
 
-            <!--                    android:src="@drawable/milk1rem" />-->
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="We are "
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:text="milk"-->
-            <!--                    android:textColor="@color/green"-->
-            <!--                    android:textSize="20sp"-->
-            <!--                    android:textStyle="bold"-->
-            <!--                    android:fontFamily="@font/roboto"  />-->
+                                        android:textStyle="bold" />
 
+                                    <TextView
 
-            <!--            </LinearLayout>-->
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="one click away"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="160dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="from you..."
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+
+                                <ImageView
+
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:src="@drawable/onedayaway"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="280dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical"
+                        app:cardCornerRadius="20dp"
+
+                        app:layout_constraintTop_toBottomOf="@+id/card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/purple">
+
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout33"
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="Healthy &amp; tasty"
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+
+                                        android:textStyle="bold" />
+
+                                    <TextView
+
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="built with "
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="160dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/urbanist"
+                                        android:gravity="left"
+                                        android:letterSpacing="0.1"
+                                        android:text="trust..."
+                                        android:textColor="@color/white"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+
+                                <ImageView
+
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:src="@drawable/fresh"
+
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
+
+
                 android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/products"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/urbanist"
 
 
-            <TextView
-                android:id="@+id/products"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:letterSpacing="0.1"
 
-                android:gravity="left"
-                android:text="Products"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/roboto" 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                    android:text="Products"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
 
-                app:layout_constraintTop_toBottomOf="@+id/refer" />
+                    app:layout_constraintTop_toBottomOf="@+id/refer" />
 
             </LinearLayout>
 
@@ -478,26 +772,244 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
 
 
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:gravity="fill"
+                        app:cardCornerRadius="15dp"
+
+                        app:cardElevation="0dp">
 
 
+                        <LinearLayout
+                            android:id="@+id/wholemilk1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rectangle"
+
+
+                            android:gravity="center"
+                            android:orientation="vertical"
+
+                            >
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:contentDescription="@string/app_name"
+
+
+                                android:scaleType="centerCrop"
+
+                                android:src="@drawable/countryeggs" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="left"
+                                android:letterSpacing="0.1"
+                                android:maxLines="1"
+                                android:text="Country eggs"
+
+                                android:textAllCaps="false"
+
+
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="normal" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="left"
+                                android:text="₹ 8"
+
+                                android:textColor="@color/BuyButton"
+                                android:textSize="20dp"
+                                android:textStyle="normal" />
+
+
+                            <Button
+                                android:id="@+id/buy11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:backgroundTint="@color/black"
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="center"
+                                android:text="Buy Now"
+
+
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+
+
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card111"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:gravity="fill"
+                        app:cardCornerRadius="15dp"
+
+
+                        app:cardElevation="0dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/wholemilk111"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rectangle"
+
+
+                            android:gravity="center"
+                            android:orientation="vertical"
+
+                            >
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+
+
+                                android:contentDescription="@string/app_name"
+
+
+                                android:scaleType="centerCrop"
+
+                                android:src="@drawable/poultry" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="left"
+                                android:letterSpacing="0.1"
+                                android:maxLines="1"
+                                android:text="Poultry Eggs"
+
+                                android:textAllCaps="false"
+
+
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="left"
+                                android:text="₹ 10"
+                                android:textColor="@color/BuyButton"
+
+                                android:textSize="20dp"
+                                android:textStyle="normal" />
+
+
+                            <Button
+                                android:id="@+id/buy111"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:backgroundTint="@color/black"
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="center"
+                                android:text="Buy Now"
+
+
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+
+
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+
                         android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-
-
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_weight="1"
                         android:gravity="fill"
                         app:cardCornerRadius="15dp"
-                        app:cardElevation="2dp">
+
+
+                        app:cardElevation="0dp"
+
+                        >
 
 
                         <LinearLayout
@@ -506,57 +1018,94 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/rectangle"
 
+
                             android:gravity="center"
                             android:orientation="vertical"
 
                             >
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
+
+
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/gradiant"
+                                android:elevation="10dp"
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="center"
+                                android:letterSpacing="0.1"
+
+                                android:paddingTop="5dp"
+
+                                android:paddingBottom="5dp"
+                                android:text="Coming Soon !"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+
+                                android:textStyle="bold" />
+
+
                             <ImageView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="100dp"
+                                android:layout_marginTop="10dp"
+
 
                                 android:contentDescription="@string/app_name"
 
                                 android:src="@drawable/milk1rem" />
 
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/urbanist"
                                 android:gravity="center"
+                                android:letterSpacing="0.1"
+                                android:maxLines="1"
                                 android:text="Whole Milk"
                                 android:textColor="@color/black"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/roboto"  />
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/urbanist"
                                 android:gravity="center"
-                                android:text="500ml   280kcal   $4.69"
-                                android:textColor="@color/green"
-                                android:textSize="10sp"
-                                android:fontFamily="@font/roboto"  />
+                                android:text=" tap to mark interested"
+                                android:textColor="@color/black"
 
-                            <!--                        <TextView-->
-                            <!--                            android:layout_width="match_parent"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:gravity="center"-->
-                            <!--                            android:text="......................xxxxxxxxxxxxxx........."-->
-                            <!--                            android:textColor="@color/grey"-->
-                            <!--                            android:textSize="10sp"-->
-                            <!--                            android:fontFamily="@font/roboto"  />-->
+                                android:textSize="10sp" />
+
 
                             <Button
                                 android:id="@+id/buy1"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="@color/green"
-
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:backgroundTint="@color/black"
+                                android:fontFamily="@font/urbanist"
+                                android:gravity="center"
                                 android:text="Buy Now"
 
-                                android:textAllCaps="false"
+
+                                android:textAllCaps="true"
                                 android:textColor="@color/white"
-                                android:fontFamily="@font/roboto"  />
+
+
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
 
 
                         </LinearLayout>
@@ -565,102 +1114,21 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/int11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
 
-                        android:layout_weight="1"
-
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="16dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-
-
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="2dp">
-
-
-                        <LinearLayout
-                            android:id="@+id/lowfat"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-
-                            android:background="@drawable/rectangle"
-                            android:gravity="center"
-                            android:orientation="vertical"
-
-                            android:padding="0dp">
-
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="100dp"
-
-                                android:contentDescription="@string/app_name"
-
-                                android:src="@drawable/milk1rem" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="Whole Milk"
-                                android:textColor="@color/black"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/roboto"  />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="250ml   280kcal   $4.69"
-                                android:textColor="@color/green"
-                                android:textSize="10sp"
-                                android:fontFamily="@font/roboto"  />
-
-                            <!--                        <TextView-->
-                            <!--                            android:layout_width="match_parent"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:gravity="center"-->
-                            <!--                            android:text="......................xxxxxxxxxxxxxx........."-->
-                            <!--                            android:textColor="@color/grey"-->
-                            <!--                            android:textSize="10sp"-->
-                            <!--                            android:fontFamily="@font/roboto"  />-->
-
-                            <Button
-                                android:id="@+id/small"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/green"
-                                android:text="Buy Now"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/roboto"  />
-
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16sp"
+                        android:layout_marginBottom="16dp"
                         android:layout_weight="1"
 
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginTop="5dp"
-
-                        android:layout_marginBottom="10dp"
-
                         app:cardCornerRadius="15dp"
-                        app:cardElevation="2dp">
+                        app:cardElevation="0dp"
+
+
+                        >
 
                         <LinearLayout
                             android:id="@+id/wholemilk250"
@@ -676,20 +1144,33 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
 
-                                android:textStyle="bold"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
 
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/gradiant"
+                                android:elevation="10dp"
+                                android:fontFamily="@font/urbanist"
                                 android:gravity="center"
-                                android:text="Coming Soon!"
-                                android:textColor="@color/green"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/roboto"  />
+                                android:letterSpacing="0.1"
+
+                                android:paddingTop="5dp"
+
+                                android:paddingBottom="5dp"
+                                android:text="Coming Soon !"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+
+                                android:textStyle="bold" />
 
 
                             <ImageView
-                                android:layout_width="150dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="100dp"
+                                android:layout_marginTop="10dp"
+
 
                                 android:contentDescription="@string/app_name"
 
@@ -698,129 +1179,30 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/urbanist"
                                 android:gravity="center"
+                                android:letterSpacing="0.1"
+                                android:maxLines="1"
                                 android:text="Coconut Water"
                                 android:textColor="@color/black"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/roboto"  />
-                            <!--                    <TextView-->
-                            <!--                        android:layout_width="match_parent"-->
-                            <!--                        android:layout_height="wrap_content"-->
-                            <!--                        android:gravity="left"-->
-                            <!--                        android:text="250ml   280kcal   $4.69"-->
-                            <!--                        android:textColor="@color/green"-->
-                            <!--                        android:textSize="11sp"-->
-                            <!--                        android:textStyle="bold" />-->
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/urbanist"
                                 android:gravity="center"
                                 android:text=" tap to mark interested"
-                                android:textColor="@color/grey"
-                                android:textSize="10sp"
-                                android:textStyle="bold"
-                                android:fontFamily="@font/roboto"  />
-
-                            <Button
-                                android:id="@+id/int1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/green"
-                                android:text="Interested"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/roboto"  />
-
-
-                        </LinearLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginTop="5dp"
-
-                        android:layout_marginBottom="10dp"
-
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="2dp">
-
-                        <LinearLayout
-                            android:id="@+id/lowfat250"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/rectangle"
-
-                            android:gravity="center"
-                            android:orientation="vertical"
-
-                            android:padding="0dp">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:textStyle="bold"
-
-
-                                android:gravity="center"
-                                android:text="Coming Soon!"
-                                android:textColor="@color/green"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/roboto"  />
-
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="100dp"
-
-                                android:contentDescription="@string/app_name"
-
-                                android:src="@drawable/eggs" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="Eggs"
                                 android:textColor="@color/black"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/roboto"  />
 
-                            <!--                    <TextView-->
-                            <!--                        android:layout_width="match_parent"-->
-                            <!--                        android:layout_height="wrap_content"-->
-                            <!--                        android:gravity="left"-->
-                            <!--                        android:text="250ml   280kcal   $4.69"-->
-                            <!--                        android:textColor="@color/green"-->
-                            <!--                        android:textSize="11sp"-->
-                            <!--                        android:textStyle="bold" />-->
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="tap to mark interested"
-                                android:textColor="@color/grey"
-                                android:textSize="10sp"
-                                android:fontFamily="@font/roboto"  />
-
-                            <Button
-                                android:id="@+id/int2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:backgroundTint="@color/green"
-                                android:text="Interested"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/roboto"  />
+                                android:textSize="10sp" />
 
 
                         </LinearLayout>
+
 
                     </androidx.cardview.widget.CardView>
 
@@ -829,88 +1211,6 @@
 
 
             </LinearLayout>
-
-
-            <!--                <LinearLayout-->
-            <!--                    android:id="@+id/lowfat250"-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-
-
-            <!--                    android:layout_marginStart="15dp"-->
-
-            <!--                    android:background="@drawable/rectangle"-->
-
-            <!--                    android:gravity="center"-->
-            <!--                    android:orientation="vertical"-->
-
-            <!--                    android:padding="0dp"-->
-
-            <!--                    app:layout_constraintDimensionRatio="H,1:1"-->
-
-            <!--                    app:layout_constraintStart_toEndOf="@+id/wholemilk250"-->
-            <!--                    app:layout_constraintTop_toTopOf="parent">-->
-
-            <!--                    <TextView-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:layout_margin="5dp"-->
-            <!--                        android:background="@drawable/milkborder"-->
-            <!--                        android:gravity="center"-->
-            <!--                        android:text="Coming Soon!"-->
-            <!--                        android:textColor="@color/white"-->
-            <!--                        android:textSize="20sp"-->
-            <!--                        android:fontFamily="@font/roboto"  />-->
-
-            <!--                    <ImageView-->
-            <!--                        android:layout_width="150dp"-->
-            <!--                        android:layout_height="100dp"-->
-
-            <!--                        android:contentDescription="@string/app_name"-->
-
-            <!--                        android:src="@drawable/eggs" />-->
-
-            <!--                    <TextView-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:gravity="center"-->
-            <!--                        android:text="Eggs"-->
-            <!--                        android:textColor="@color/black"-->
-            <!--                        android:textSize="20sp"-->
-            <!--                        android:fontFamily="@font/roboto"  />-->
-
-            <!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:gravity="left"&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:text="250ml   280kcal   $4.69"&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:textColor="@color/green"&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:textSize="11sp"&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        android:textStyle="bold" />&ndash;&gt;-->
-            <!--                    <TextView-->
-            <!--                        android:layout_width="match_parent"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:gravity="center"-->
-            <!--                        android:text=" tap to mark interested"-->
-            <!--                        android:textColor="@color/grey"-->
-            <!--                        android:textSize="10sp"-->
-            <!--                        android:fontFamily="@font/roboto"  />-->
-
-            <!--                    <Button-->
-            <!--                        android:id="@+id/int2"-->
-            <!--                        android:layout_width="wrap_content"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:backgroundTint="@color/green"-->
-            <!--                        android:text="Interested"-->
-            <!--                        android:textAllCaps="false"-->
-            <!--                        android:textColor="@color/white"-->
-            <!--                        android:fontFamily="@font/roboto"  />-->
-
-
-            <!--                </LinearLayout>-->
-
-
-            <!--            </LinearLayout>-->
 
 
         </LinearLayout>
